@@ -20,7 +20,7 @@
   .title h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #eb1616;
+    color: #0e0707;
   }
   </style>
   

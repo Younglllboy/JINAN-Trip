@@ -2,14 +2,15 @@
     <div class="food">
       <h1>济南地道美食</h1>
       <div class="gallery">
-        <img src="../assets/food1.png" alt="Food 1">
-        <img src="../assets/logo.png" alt="Food 2">
+        <foog-card></foog-card>
       </div>
     </div>
   </template>
   
   <script>
+import FoogCard from '@/components/FoogCard.vue';
   export default {
+  components: { FoogCard },
     name: 'FoodPage'
   };
   </script>

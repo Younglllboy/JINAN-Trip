@@ -1,14 +1,16 @@
 <template>
     <nav>
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/springs">Springs</router-link></li>
-        <li><router-link to="/food">Food</router-link></li>
-        <li><router-link to="/attractions">Attractions</router-link></li>
-        <li><router-link to="/history">History</router-link></li>
-        <li><router-link to="/culture">Culture</router-link></li>
-        <li><router-link to="/contact">Contact</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/">主页</router-link></li>
+        <li><router-link to="/springs">春景</router-link></li>
+        <li><router-link to="/food">美食</router-link></li>
+        <li><router-link to="/attractions">引力</router-link></li>
+        <li><router-link to="/history">历史</router-link></li>
+        <li><router-link to="/culture">文化</router-link></li>
+        <li><router-link to="/contact">联系我们</router-link></li>
+        <li><router-link to="/about">关于</router-link></li>
+        <li><router-link to="/login">登录</router-link></li>
+        <li><router-link to="/register">注册</router-link></li>
       </ul>
     </nav>
   </template>

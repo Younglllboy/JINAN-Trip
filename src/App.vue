@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Title />
     <Navbar />
     <router-view />
     <Footer />
@@ -7,12 +8,14 @@
 </template>
 
 <script>
+import Title from './components/TitleOn.vue';
 import Navbar from './components/NavbarOn.vue';
 import Footer from './components/FooterOn.vue';
 
 export default {
   name: 'App',
   components: {
+    Title,
     Navbar,
     Footer
   }
@@ -26,6 +29,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 </style>

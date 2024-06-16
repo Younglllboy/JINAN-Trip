@@ -8,7 +8,8 @@ import History from '@/views/HistoryPage.vue';
 import Culture from '@/views/CulturePage.vue';
 import Contact from '@/views/ContactPage.vue';
 import About from '@/views/AboutPage.vue';
-
+import Login from '@/components/LogIn.vue';
+import Register from '@/components/RigisterIn.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -21,6 +22,8 @@ export default new Router({
     { path: '/history', name: 'History', component: History },
     { path: '/culture', name: 'Culture', component: Culture },
     { path: '/contact', name: 'Contact', component: Contact },
-    { path: '/about', name: 'About', component: About }
+    { path: '/about', name: 'About', component: About },
+    { path: '/login', name: 'Login', component: Login },
+    { path: '/register', name: 'Register', component: Register }
   ]
 });

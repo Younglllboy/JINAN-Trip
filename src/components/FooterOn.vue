@@ -1,6 +1,7 @@
 <template>
     <footer>
-      <p>&copy; 2024 济南泉城风光. All rights reserved.</p>
+      <p>&copy; 2024 济南泉城风光. By Billy Young.</p>
+
     </footer>
   </template>
   

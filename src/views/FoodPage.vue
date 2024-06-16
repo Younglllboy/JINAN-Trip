@@ -2,7 +2,7 @@
     <div class="food">
       <h1>济南地道美食</h1>
       <div class="gallery">
-        <img src="../assets/logo.png" alt="Food 1">
+        <img src="../assets/food1.png" alt="Food 1">
         <img src="../assets/logo.png" alt="Food 2">
       </div>
     </div>

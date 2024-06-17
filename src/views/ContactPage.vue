@@ -9,7 +9,16 @@
       v-model="textarea"
     >
     </el-input>
-    <input type="submit" />
+    <input onclick="alert('感谢你的反馈')" type="submit" />
+    <el-rate
+      v-model="value"
+      disabled
+      show-score
+      text-color="#ff9900"
+      score-template="{value}"
+      texts="满意"
+    >
+    </el-rate>
   </div>
 </template>
   
@@ -19,6 +28,7 @@ export default {
   data() {
     return {
       textarea: "",
+      value: 4.5,
     };
   },
 };

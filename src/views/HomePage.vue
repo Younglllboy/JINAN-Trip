@@ -35,7 +35,7 @@
           <el-link
             type="primary"
             v-if="index == 0"
-            href="http://localhost:8080/login"
+            href=""
             >我要报名</el-link
           >
         </li>

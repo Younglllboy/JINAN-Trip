@@ -10,6 +10,16 @@ import Contact from '@/views/ContactPage.vue';
 import About from '@/views/AboutPage.vue';
 import Login from '@/components/LogIn.vue';
 import Register from '@/components/RigisterIn.vue';
+import Qianfoshan1 from '@/views/Qianfoshan1.vue';
+import Qianfoshan2 from '@/views/Qianfoshan2.vue';
+import Daminghu1 from '@/views/Daminghu1.vue';
+import Daminghu2 from '@/views/Daminghu2.vue';
+import Baotuquan1 from '@/views/Baotuquan1.vue';
+import Baotuquan2 from '@/views/Baotuquan2.vue';
+
+
+
+
 Vue.use(Router);
 
 export default new Router({
@@ -24,6 +34,55 @@ export default new Router({
     { path: '/contact', name: 'Contact', component: Contact },
     { path: '/about', name: 'About', component: About },
     { path: '/login', name: 'Login', component: Login },
-    { path: '/register', name: 'Register', component: Register }
+    { path: '/register', name: 'Register', component: Register },
+    { path: '/attractions', component: Attractions,
+      children: [
+        {
+          path: 'qianfoshan1',
+          component:  Qianfoshan1
+        }
+      ]
+    },//设置2级路由
+    { path: '/attractions', component: Attractions,
+      children: [
+        {
+          path: 'qianfoshan2',
+          component:  Qianfoshan2
+        }
+      ]
+    },
+    { path: '/attractions', component: Attractions,
+      children: [
+        {
+          path: 'daminghu1',
+          component:  Daminghu1
+        }
+      ]
+    },    
+    { path: '/attractions', component: Attractions,
+      children: [
+        {
+          path: 'daminghu2',
+          component:  Daminghu2
+        }
+      ]
+    },
+    
+    { path: '/attractions', component: Attractions,
+      children: [
+        {
+          path: 'baotuquan1',
+          component:  Baotuquan1
+        }
+      ]
+    },    
+    { path: '/attractions', component: Attractions,
+      children: [
+        {
+          path: 'baotuquan2',
+          component:  Baotuquan2
+        }
+      ]
+    },
   ]
 });

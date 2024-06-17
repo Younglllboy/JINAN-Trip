@@ -2,7 +2,7 @@
     <nav>
       <ul>
         <li><router-link to="/">主页</router-link></li>
-        <li><router-link to="/springs">春景</router-link></li>
+        <li><router-link to="/springs">泉水</router-link></li>
         <li><router-link to="/food">美食</router-link></li>
         <li><router-link to="/attractions">引力</router-link></li>
         <li><router-link to="/history">历史</router-link></li>

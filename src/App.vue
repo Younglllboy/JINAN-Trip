@@ -7,7 +7,9 @@
       <div class="spacer"></div>
     </main>
     <Footer v-if="showFooter" class="footer"></Footer>
+
   </div>
+ 
 </template>
 
 <script>
@@ -21,6 +23,7 @@ export default {
     Title,
     Navbar,
     Footer,
+
   },
   data() {
     return {

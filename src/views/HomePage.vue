@@ -41,6 +41,49 @@
         </li>
       </ul>
     </div>
+    <p>一份问卷小调查</p>
+
+    <el-button type="primary" @click="dialog = true">点我填写</el-button>
+    <el-drawer
+      title="有朋自远方来，不亦乐乎"
+      :before-close="handleClose"
+      :visible.sync="dialog"
+      direction="ltr"
+      custom-class="demo-drawer"
+      ref="drawer"
+    >
+      <div class="demo-drawer__content">
+        <el-form :model="form">
+
+
+          <el-form-item label="爱济南">
+    <el-radio-group v-model="form.resource">
+      <el-radio label="超级无敌爱"></el-radio>
+      <el-radio label="一般般啦"></el-radio>
+    </el-radio-group>
+  </el-form-item>
+
+
+          <el-form-item label="你想对济南说？" :label-width="formLabelWidth">
+            <el-input v-model="form.name" autocomplete="off"></el-input>
+          </el-form-item>
+          <el-form-item label="你是否来过济南？" :label-width="formLabelWidth">
+            <el-select v-model="form.region" placeholder="请选择">
+              <el-option label="来过" value="yes"></el-option>
+              <el-option label="还木有" value="no"></el-option>
+            </el-select>
+          </el-form-item>
+        </el-form>
+        <div class="demo-drawer__footer">
+          <el-button @click="cancelForm">取 消</el-button>
+          <el-button
+            type="primary"
+            @click="$refs.drawer.closeDrawer()"
+            :loading="loading"
+            >{{ loading ? "提交中 ..." : "确 定" }}</el-button>
+        </div>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
@@ -53,6 +96,10 @@ export default {
   },
   data() {
     return {
+
+      dialog: false,
+      loading: false,
+
       searchQuery: "",
       imagehome: [
         require("../assets/history1.png"),
@@ -102,6 +149,18 @@ export default {
           link: "http://www.jnwljt.com/",
         },
       ],
+
+      form: {
+        come: "",
+        say: "",
+        likejinan: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: "",
+      },
+      formLabelWidth: "80px",
+      timer: null,
     };
   },
   methods: {
@@ -123,7 +182,7 @@ export default {
           历史: "history",
           文化: "culture",
           // 可添加更多的关键词映射
-        }
+        };
         for (const key in routesMap) {
           if (query.includes(key)) {
             const routeName = routesMap[key];
@@ -141,6 +200,30 @@ export default {
         //alert('未找到相关内容'); // 或者跳转到一个默认页面
         //}
       }
+    },
+    handleClose(done) {
+      if (this.loading) {
+        return;
+      }
+      this.$confirm("确定要提交表单吗？")
+        .then(() => {
+          this.loading = true;
+          this.timer = setTimeout(() => {
+            done();
+            // 动画关闭需要一定的时间
+            setTimeout(() => {
+              this.loading = false;
+            }, 400);
+          }, 2000);
+        })
+        .catch(() => {});
+        alert('感谢参与此次问卷');
+    },
+    cancelForm() {
+      this.loading = false;
+      this.dialog = false;
+      clearTimeout(this.timer);
+      
     },
   },
 };
